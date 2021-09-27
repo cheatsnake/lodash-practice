@@ -7,7 +7,7 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     }
     return to.concat(ar || Array.prototype.slice.call(from));
 };
-var _ = require('./lodash.js');
+var _ = require('lodash'); //need for tests
 //chunk
 function chunk(arr, size) {
     if (size >= arr.length) {
@@ -31,5 +31,5 @@ function chunk(arr, size) {
         return res;
     }
 }
-console.log(chunk(['a', 'b', 'c', 'd', 'e', 'f'], 2));
+// console.log(chunk(['a', 'b', 'c', 'd', 'e', 'f'], 2))
 console.log(_.chunk(['a', 'b', 'c', 'd', 'e', 'f'], 2));

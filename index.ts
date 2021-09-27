@@ -1,4 +1,4 @@
-const _ = require('./lodash.js'); //need for tests
+const _ = require('lodash'); //need for tests
 
 //chunk
 
