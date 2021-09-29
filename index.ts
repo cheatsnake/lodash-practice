@@ -32,7 +32,7 @@ const compact = (arr: Array<any>):Array<any> => arr.filter(item => item);
 // console.log(_.compact([0, 1, false, 2, '', 3]))
 
 //concat
-function concat(arr: Array<any>, ...values: any) {
+function concat(arr: Array<any>, ...values: any): Array<any> {
 	let res = [];
 	for (let key in arguments) {
 		if (Array.isArray(arguments[key])) {
@@ -48,3 +48,33 @@ function concat(arr: Array<any>, ...values: any) {
 // const array = [1];
 // console.log(concat(array, 2, [3], [[4]]));
 // console.log(_.concat(array, 2, [3], [[4]]));
+
+//difference
+function difference(arr: Array<any>, values: Array<any>): Array<any> {
+ 	let res = [];
+	arr.forEach(item => {
+	    	!values.find(elem => elem === item) ? res.push(item) : null;
+	    }
+  	);
+	return res;
+}
+
+// console.log(difference([2, 1, 4, 4], [2, 3]))
+// console.log(_.difference([2, 1, 4, 4], [2, 3]))
+
+//drop
+function drop(arr: Array<any>, n: number = 1): Array<any> {
+	arr.splice(0, n);
+	return arr;
+}
+
+// console.log(drop([1, 2, 3, 4], 2))
+// console.log(_.drop([1, 2, 3, 4], 2))
+
+//dropRight
+function dropRight(arr: Array<any>, n: number = 1): Array<any> {
+	return arr.slice(0, -n);
+}
+
+// console.log(dropRight([1, 2, 3]))
+// console.log(_.dropRight([1, 2, 3]))

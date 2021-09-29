@@ -55,8 +55,31 @@ function concat(arr) {
     res.shift();
     return __spreadArray(__spreadArray([], arr, true), res, true);
 }
-var array = [1];
-console.log(concat(array, 2, [3], [[4]]));
-console.log(_.concat(array, 2, [3], [[4]]));
-console.log(concat(array, 2, [[3, 5, 6]], [[4]]));
-console.log(_.concat(array, 2, [[3, 5, 6]], [[4]]));
+// const array = [1];
+// console.log(concat(array, 2, [3], [[4]]));
+// console.log(_.concat(array, 2, [3], [[4]]));
+//difference
+function difference(arr, values) {
+    var res = [];
+    arr.forEach(function (item) {
+        !values.find(function (elem) { return elem === item; }) ? res.push(item) : null;
+    });
+    return res;
+}
+// console.log(difference([2, 1, 4, 4], [2, 3]))
+// console.log(_.difference([2, 1, 4, 4], [2, 3]))
+//drop
+function drop(arr, n) {
+    if (n === void 0) { n = 1; }
+    arr.splice(0, n);
+    return arr;
+}
+// console.log(drop([1, 2, 3, 4], 2))
+// console.log(_.drop([1, 2, 3, 4], 2))
+//dropRight
+function dropRight(arr, n) {
+    if (n === void 0) { n = 1; }
+    return arr.slice(0, -n);
+}
+// console.log(dropRight([1, 2, 3]))
+// console.log(_.dropRight([1, 2, 3]))
