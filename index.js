@@ -83,3 +83,11 @@ function dropRight(arr, n) {
 }
 // console.log(dropRight([1, 2, 3]))
 // console.log(_.dropRight([1, 2, 3]))
+//fill
+function fill(arr, value, start, end) {
+    if (start === void 0) { start = 0; }
+    if (end === void 0) { end = arr.length; }
+    return arr.map(function (elem, i) { return i >= start && i < end ? value : elem; });
+}
+console.log(fill([4, 6, 8, 10], '*', 1, 3));
+console.log(_.fill([4, 6, 8, 10], '*', 1, 3));

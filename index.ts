@@ -78,3 +78,17 @@ function dropRight(arr: Array<any>, n: number = 1): Array<any> {
 
 // console.log(dropRight([1, 2, 3]))
 // console.log(_.dropRight([1, 2, 3]))
+
+//fill
+function fill(
+	arr: any[],
+	value: any, 
+	start: number = 0, 
+	end: number = arr.length)
+: any[] {
+	return arr.map((elem, i) => i >= start && i < end ? value : elem);
+}
+
+console.log(fill([4, 6, 8, 10], '*', 1, 3))
+console.log(_.fill([4, 6, 8, 10], '*', 1, 3))
+
