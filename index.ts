@@ -89,6 +89,40 @@ function fill(
 	return arr.map((elem, i) => i >= start && i < end ? value : elem);
 }
 
-console.log(fill([4, 6, 8, 10], '*', 1, 3))
-console.log(_.fill([4, 6, 8, 10], '*', 1, 3))
+// console.log(fill([4, 6, 8, 10], '*', 1, 3))
+// console.log(_.fill([4, 6, 8, 10], '*', 1, 3))
 
+//head
+function head(arr: any[]): any {
+	return arr[0];
+}
+
+// console.log(head([1, 2, 3]))
+// console.log(_.head([1, 2, 3]))
+
+//flatten
+function flatten(arr: any[]): any[] {
+	let res = [];
+	arr.forEach(elem => {
+		Array.isArray(elem) ? res.push(...elem) : res.push(elem);
+	});
+	return res;
+}
+
+// console.log(flatten([1, [2, [3, [4]], 5]]))
+// console.log(_.flatten([1, [2, [3, [4]], 5]]))
+
+//flattenDeep
+function flattenDeep(arr: any[]): any[] {
+	let res = [];
+	function deep(elem) {
+		elem.forEach(i => {
+			Array.isArray(i) ? deep(i) : res.push(i);
+		});
+	}
+	deep(arr);
+	return res;
+}
+
+// console.log(flattenDeep([1, [2, [3, [4]], 5]]))
+// console.log(_.flattenDeep([1, [2, [3, [4]], 5]]))
