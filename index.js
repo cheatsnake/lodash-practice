@@ -120,3 +120,17 @@ function flattenDeep(arr) {
 }
 // console.log(flattenDeep([1, [2, [3, [4]], 5]]))
 // console.log(_.flattenDeep([1, [2, [3, [4]], 5]]))
+//indexOf
+function indexOf(arr, value, fromIndex) {
+    if (fromIndex === void 0) { fromIndex = 0; }
+    var res = -1;
+    for (var i = fromIndex; i < arr.length; i++) {
+        if (arr[i] === value) {
+            res = i;
+            i = arr.length;
+        }
+    }
+    return res;
+}
+console.log(indexOf([1, 2, 1, 2], 2));
+console.log(_.indexOf([1, 2, 1, 2], 2));

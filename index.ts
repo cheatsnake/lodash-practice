@@ -126,3 +126,18 @@ function flattenDeep(arr: any[]): any[] {
 
 // console.log(flattenDeep([1, [2, [3, [4]], 5]]))
 // console.log(_.flattenDeep([1, [2, [3, [4]], 5]]))
+
+//indexOf
+function indexOf(arr: any[], value: any, fromIndex: number = 0): number {
+	let res = -1;
+	for (let i = fromIndex; i < arr.length; i++) {
+		if (arr[i] === value) {
+			res = i;
+			i = arr.length;
+		}
+	}
+	return res;
+}
+
+// console.log(indexOf([1, 2, 1, 2], 2, 2))
+// console.log(_.indexOf([1, 2, 1, 2], 2, 2))
