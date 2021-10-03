@@ -141,3 +141,12 @@ function indexOf(arr: any[], value: any, fromIndex: number = 0): number {
 
 // console.log(indexOf([1, 2, 1, 2], 2, 2))
 // console.log(_.indexOf([1, 2, 1, 2], 2, 2))
+
+//initial
+function initial (arr: any[]): any[] {
+	arr.splice(arr.length - 1, 1);
+	return arr;
+}
+
+// console.log(initial([1, 2, 3]));
+// console.log(_.initial([1, 2, 3]));
