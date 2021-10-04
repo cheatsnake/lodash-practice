@@ -139,5 +139,35 @@ function initial(arr) {
     arr.splice(arr.length - 1, 1);
     return arr;
 }
-console.log(initial([1, 2, 3]));
-console.log(_.initial([1, 2, 3]));
+// console.log(initial([1, 2, 3]));
+// console.log(_.initial([1, 2, 3]));
+//intersection
+function intersection() {
+    var arr = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        arr[_i] = arguments[_i];
+    }
+    var checkArr = [];
+    var res = [];
+    for (var i = 1; i < arguments.length; i++) {
+        checkArr.push.apply(checkArr, arguments[i]);
+    }
+    arguments[0].forEach(function (item) {
+        if (checkArr.includes(item))
+            res.push(item);
+    });
+    return res;
+}
+// console.log(intersection([2, 1], [2, 3]))
+// console.log(_.intersection([2, 1], [2, 3]))
+//join
+function join(arr, separator) {
+    if (separator === void 0) { separator = ','; }
+    var res = '';
+    arr.forEach(function (item) {
+        res += (item + separator);
+    });
+    return res.slice(0, -1);
+}
+// console.log(join(['a', 'b', 'c'], '~'))
+// console.log(_.join(['a', 'b', 'c'], '~'))

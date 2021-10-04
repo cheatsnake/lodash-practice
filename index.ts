@@ -150,3 +150,31 @@ function initial (arr: any[]): any[] {
 
 // console.log(initial([1, 2, 3]));
 // console.log(_.initial([1, 2, 3]));
+
+//intersection
+function intersection(...arr: any[]): any[] {
+	const checkArr = [];
+	let res =[];
+	for(let i = 1; i < arguments.length; i++) {
+		checkArr.push(...arguments[i]);
+	}
+	arguments[0].forEach(item => {
+		if (checkArr.includes(item)) res.push(item);
+	})
+	return res;
+}
+
+// console.log(intersection([2, 1], [2, 3]))
+// console.log(_.intersection([2, 1], [2, 3]))
+
+//join
+function join(arr: any[], separator: string = ','): string {
+	let res = '';
+	arr.forEach(item => {
+		res += (item + separator);
+	})
+	return res.slice(0, -1);
+}
+
+// console.log(join(['a', 'b', 'c'], '~'))
+// console.log(_.join(['a', 'b', 'c'], '~'))
