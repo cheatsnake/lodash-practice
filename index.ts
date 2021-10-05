@@ -178,3 +178,23 @@ function join(arr: any[], separator: string = ','): string {
 
 // console.log(join(['a', 'b', 'c'], '~'))
 // console.log(_.join(['a', 'b', 'c'], '~'))
+
+//last
+const last = (arr: any[]): any => arr[arr.length - 1]
+
+// console.log(last([1, 2, 3]))
+// console.log(_.last([1, 2, 3]))
+
+//nth
+function nth(arr: any[], n: number = 0): any {
+	if (n >= 0) {
+		return arr[n];
+	} else {
+		return arr[arr.length - Math.abs(n)]
+	}
+}
+
+// console.log(nth([1, 2, 3, 8, 12], -2))
+// console.log(nth([1, 2, 3, 8, 12]))
+// console.log(_.nth([1, 2, 3, 8, 12], -2))
+// console.log(_.nth([1, 2, 3, 8, 12]))

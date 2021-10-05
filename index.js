@@ -171,3 +171,21 @@ function join(arr, separator) {
 }
 // console.log(join(['a', 'b', 'c'], '~'))
 // console.log(_.join(['a', 'b', 'c'], '~'))
+//last
+var last = function (arr) { return arr[arr.length - 1]; };
+// console.log(last([1, 2, 3]))
+// console.log(_.last([1, 2, 3]))
+//nth
+function nth(arr, n) {
+    if (n === void 0) { n = 0; }
+    if (n >= 0) {
+        return arr[n];
+    }
+    else {
+        return arr[arr.length - Math.abs(n)];
+    }
+}
+// console.log(nth([1, 2, 3, 8, 12], -2))
+// console.log(nth([1, 2, 3, 8, 12]))
+// console.log(_.nth([1, 2, 3, 8, 12], -2))
+// console.log(_.nth([1, 2, 3, 8, 12]))
