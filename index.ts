@@ -198,3 +198,36 @@ function nth(arr: any[], n: number = 0): any {
 // console.log(nth([1, 2, 3, 8, 12]))
 // console.log(_.nth([1, 2, 3, 8, 12], -2))
 // console.log(_.nth([1, 2, 3, 8, 12]))
+
+//pull
+function pull(arr: any[], ...values: any): any[] {
+	const res = [];
+	arr.forEach(item => {
+		if (![...values].includes(item)) {
+			res.push(item)
+		}
+	})
+	return res;
+}
+
+// const array = ['a', 'b', 'c', 'a', 'b', 'c'];
+// console.log(pull(array, 'a', 'c'))
+// console.log(_.pull(array, 'a', 'c'))
+
+//pullAll
+function pullAll(arr: any[], values: any[]): any[] {
+	const res = [];
+	arr.forEach(item => {
+		if (! values.includes(item)) {
+			res.push(item)
+		}
+	})
+	return res;
+}
+
+// const array = ['a', 'b', 'c', 'a', 'b', 'c'];
+// console.log(pullAll(array, ['a', 'c']))
+// console.log(_.pullAll(array, ['a', 'c']))
+
+
+

@@ -189,3 +189,33 @@ function nth(arr, n) {
 // console.log(nth([1, 2, 3, 8, 12]))
 // console.log(_.nth([1, 2, 3, 8, 12], -2))
 // console.log(_.nth([1, 2, 3, 8, 12]))
+//pull
+function pull(arr) {
+    var values = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        values[_i - 1] = arguments[_i];
+    }
+    var res = [];
+    arr.forEach(function (item) {
+        if (!__spreadArray([], values, true).includes(item)) {
+            res.push(item);
+        }
+    });
+    return res;
+}
+// const array = ['a', 'b', 'c', 'a', 'b', 'c'];
+// console.log(pull(array, 'a', 'c'))
+// console.log(_.pull(array, 'a', 'c'))
+//pullAll
+function pullAll(arr, values) {
+    var res = [];
+    arr.forEach(function (item) {
+        if (!values.includes(item)) {
+            res.push(item);
+        }
+    });
+    return res;
+}
+// const array = ['a', 'b', 'c', 'a', 'b', 'c'];
+// console.log(pullAll(array, ['a', 'c']))
+// console.log(_.pullAll(array, ['a', 'c']))
