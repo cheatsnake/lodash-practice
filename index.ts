@@ -180,7 +180,7 @@ function join(arr: any[], separator: string = ','): string {
 // console.log(_.join(['a', 'b', 'c'], '~'))
 
 //last
-const last = (arr: any[]): any => arr[arr.length - 1]
+const last = (arr: any[]): any => arr[arr.length - 1];
 
 // console.log(last([1, 2, 3]))
 // console.log(_.last([1, 2, 3]))
@@ -190,7 +190,7 @@ function nth(arr: any[], n: number = 0): any {
 	if (n >= 0) {
 		return arr[n];
 	} else {
-		return arr[arr.length - Math.abs(n)]
+		return arr[arr.length - Math.abs(n)];
 	}
 }
 
@@ -204,7 +204,7 @@ function pull(arr: any[], ...values: any): any[] {
 	const res = [];
 	arr.forEach(item => {
 		if (![...values].includes(item)) {
-			res.push(item)
+			res.push(item);
 		}
 	})
 	return res;
@@ -219,7 +219,7 @@ function pullAll(arr: any[], values: any[]): any[] {
 	const res = [];
 	arr.forEach(item => {
 		if (! values.includes(item)) {
-			res.push(item)
+			res.push(item);
 		}
 	})
 	return res;
@@ -230,4 +230,91 @@ function pullAll(arr: any[], values: any[]): any[] {
 // console.log(_.pullAll(array, ['a', 'c']))
 
 
+//pullAt
+function pullAt(arr: any[], values: number | number[] ): any[] {
+	const res = [];
+	let i = 0;
+	Array.isArray(values) ? values : values = [values];
+	values.forEach(item => {
+		const n = arr.splice(item - i, 1);
+		res.push(...n);
+		i++;
+	})
+	return res;
+}
 
+// const array = ['a', 'b', 'c', 'd']
+// const array2 = ['a', 'b', 'c', 'd']
+// const pulled = pullAt(array, [1, 3])
+// const pulled2 = _.pullAt(array2, [1, 3])
+// console.log(array, pulled)
+// console.log(array2, pulled2)
+
+
+//remove
+function remove(arr: any[], func: Function): any[] {
+	const res = [];
+	arr.forEach((item, index, arr) => {
+		if (func(item, index, arr)) {
+			const x = arr.splice(index, 1);
+			res.push(...x);
+		}
+	})
+	return res;
+}
+
+// const array = [1, 2, 3, 4]
+// const array2 = [1, 2, 3, 4]
+// const evens = remove(array, function(n) {
+// 	return n % 2 == 0;
+// });
+// const evens2 = _.remove(array2, function(n) {
+// 	return n % 2 == 0;
+// });
+// console.log(array, evens)
+// console.log(array2, evens2)
+
+//reverse
+const reverse = (arr: any[]): any[] => arr.reverse();
+
+// const arr = [1, 2, 3]
+// const arr2 = [1, 2, 3]
+// console.log(reverse(arr), arr)
+// console.log(_.reverse(arr2), arr2)
+
+//slice
+function slice(arr: any[], start: number = 0, end: number = arr.length): any[] {
+	return arr.slice(start, end);
+}
+
+// const arr = [1, 2, 3, 4, 5, 6]
+// console.log(slice(arr, 1, 3))
+// console.log(_.slice(arr, 1, 3))
+
+//sortedIndex
+function sortedIndex(arr: any[], value: any): number {
+	let pos = -1;
+	arr.forEach((item, index) => {
+		if (item >= value && pos < 0) {
+			pos = index;
+		}
+	});
+	return pos;
+}
+
+// console.log(sortedIndex([30, 50], 40))
+// console.log(_.sortedIndex([30, 50], 40))
+
+//sortedIndexOf
+function sortedIndexOf(arr: any[], value: any): number {
+	let pos = -1;
+	arr.forEach((item, index) => {
+		if (item === value && pos < 0) {
+			pos = index;
+		}
+	})
+	return pos;
+}
+
+// console.log(sortedIndexOf([4, 5, 5, 5, 6], 5))
+// console.log(_.sortedIndexOf([4, 5, 5, 5, 6], 5))

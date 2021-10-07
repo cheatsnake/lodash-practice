@@ -219,3 +219,81 @@ function pullAll(arr, values) {
 // const array = ['a', 'b', 'c', 'a', 'b', 'c'];
 // console.log(pullAll(array, ['a', 'c']))
 // console.log(_.pullAll(array, ['a', 'c']))
+//pullAt
+function pullAt(arr, values) {
+    var res = [];
+    var i = 0;
+    Array.isArray(values) ? values : values = [values];
+    values.forEach(function (item) {
+        var n = arr.splice(item - i, 1);
+        res.push.apply(res, n);
+        i++;
+    });
+    return res;
+}
+// const array = ['a', 'b', 'c', 'd']
+// const array2 = ['a', 'b', 'c', 'd']
+// const pulled = pullAt(array, [1, 3])
+// const pulled2 = _.pullAt(array2, [1, 3])
+// console.log(array, pulled)
+// console.log(array2, pulled2)
+//remove
+function remove(arr, func) {
+    var res = [];
+    arr.forEach(function (item, index, arr) {
+        if (func(item, index, arr)) {
+            var x = arr.splice(index, 1);
+            res.push.apply(res, x);
+        }
+    });
+    return res;
+}
+// const array = [1, 2, 3, 4]
+// const array2 = [1, 2, 3, 4]
+// const evens = remove(array, function(n) {
+// 	return n % 2 == 0;
+// });
+// const evens2 = _.remove(array2, function(n) {
+// 	return n % 2 == 0;
+// });
+// console.log(array, evens)
+// console.log(array2, evens2)
+//reverse
+var reverse = function (arr) { return arr.reverse(); };
+// const arr = [1, 2, 3]
+// const arr2 = [1, 2, 3]
+// console.log(reverse(arr), arr)
+// console.log(_.reverse(arr2), arr2)
+//slice
+function slice(arr, start, end) {
+    if (start === void 0) { start = 0; }
+    if (end === void 0) { end = arr.length; }
+    return arr.slice(start, end);
+}
+// const arr = [1, 2, 3, 4, 5, 6]
+// console.log(slice(arr, 1, 3))
+// console.log(_.slice(arr, 1, 3))
+//sortedIndex
+function sortedIndex(arr, value) {
+    var pos = -1;
+    arr.forEach(function (item, index) {
+        if (item >= value && pos < 0) {
+            pos = index;
+        }
+    });
+    return pos;
+}
+// console.log(sortedIndex([30, 50], 40))
+// console.log(_.sortedIndex([30, 50], 40))
+//sortedIndexOf
+function sortedIndexOf(arr, value) {
+    var pos = -1;
+    arr.forEach(function (item, index) {
+        if (item === value && pos < 0) {
+            pos = index;
+        }
+    });
+    return pos;
+}
+// console.log(sortedIndexOf([4, 5, 5, 5, 6], 5))
+// console.log(_.sortedIndexOf([4, 5, 5, 5, 6], 5))
