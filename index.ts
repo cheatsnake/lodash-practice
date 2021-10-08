@@ -252,7 +252,7 @@ function pullAt(arr: any[], values: number | number[] ): any[] {
 
 
 //remove
-function remove(arr: any[], func: Function): any[] {
+function remove(arr: any[], func: (...any) => boolean): any[] {
 	const res = [];
 	arr.forEach((item, index, arr) => {
 		if (func(item, index, arr)) {
@@ -318,3 +318,46 @@ function sortedIndexOf(arr: any[], value: any): number {
 
 // console.log(sortedIndexOf([4, 5, 5, 5, 6], 5))
 // console.log(_.sortedIndexOf([4, 5, 5, 5, 6], 5))
+
+//sortedLastIndex
+function sortedLastIndex(arr: any[], value:any): number {
+	let pos = null;
+	arr.forEach((item, index) => {
+		if (item > value && !pos) {
+			pos = index;
+		}
+	});
+	pos === null ? pos = arr.length : null;
+	return pos;
+}
+
+// console.log(sortedLastIndex([4, 5, 5, 5, 6], 5))
+// console.log(_.sortedLastIndex([4, 5, 5, 5, 6], 5))
+
+//sortedLastIndexOf
+function sortedLastIndexOf(arr: any[], value: any): number {
+	let pos = -1;
+	arr.forEach((item, index) => {
+		if (item === value) {
+			pos = index;
+		}
+	});
+	return pos;
+}
+
+// console.log(sortedLastIndexOf([4, 5, 5, 5, 6], 5))
+// console.log(_.sortedLastIndexOf([4, 5, 5, 5, 6], 5))
+
+//sortedUniq
+function sortedUniq(arr: any[]): any[] {
+	const res = [];
+	arr.forEach(item => {
+		if (!res.includes(item)) {
+			res.push(item);
+		}
+	})
+	return res;
+}
+
+// console.log(sortedUniq([1, 1, 2]))
+// console.log(_.sortedUniq([1, 1, 2]))

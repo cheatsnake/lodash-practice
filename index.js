@@ -297,3 +297,40 @@ function sortedIndexOf(arr, value) {
 }
 // console.log(sortedIndexOf([4, 5, 5, 5, 6], 5))
 // console.log(_.sortedIndexOf([4, 5, 5, 5, 6], 5))
+//sortedLastIndex
+function sortedLastIndex(arr, value) {
+    var pos = null;
+    arr.forEach(function (item, index) {
+        if (item > value && !pos) {
+            pos = index;
+        }
+    });
+    pos === null ? pos = arr.length : null;
+    return pos;
+}
+// console.log(sortedLastIndex([4, 5, 5, 5, 6], 5))
+// console.log(_.sortedLastIndex([4, 5, 5, 5, 6], 5))
+//sortedLastIndexOf
+function sortedLastIndexOf(arr, value) {
+    var pos = -1;
+    arr.forEach(function (item, index) {
+        if (item === value) {
+            pos = index;
+        }
+    });
+    return pos;
+}
+// console.log(sortedLastIndexOf([4, 5, 5, 5, 6], 5))
+// console.log(_.sortedLastIndexOf([4, 5, 5, 5, 6], 5))
+//sortedUniq
+function sortedUniq(arr) {
+    var res = [];
+    arr.forEach(function (item) {
+        if (!res.includes(item)) {
+            res.push(item);
+        }
+    });
+    return res;
+}
+// console.log(sortedUniq([1, 1, 2]))
+// console.log(_.sortedUniq([1, 1, 2]))
