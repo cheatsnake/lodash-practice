@@ -1,7 +1,7 @@
 const _ = require('lodash'); //need for tests
 
 //chunk
-function chunk(arr: Array<any>, size: number): Array<any> {
+function chunk(arr: any[], size: number): any[] {
 	if (size >= arr.length) {
 		return [arr];
 	} else if (size <= 0) {
@@ -26,13 +26,13 @@ function chunk(arr: Array<any>, size: number): Array<any> {
 // console.log(_.chunk(['a', 'b', 'c', 'd', 'e', 'f'], 2))
 
 //compact
-const compact = (arr: Array<any>):Array<any> => arr.filter(item => item);
+const compact = (arr: any[]):any[] => arr.filter(item => item);
 
 // console.log(compact([0, 1, false, 2, '', 3]))
 // console.log(_.compact([0, 1, false, 2, '', 3]))
 
 //concat
-function concat(arr: Array<any>, ...values: any): Array<any> {
+function concat(arr: any[], ...values: any): any[] {
 	let res = [];
 	for (let key in arguments) {
 		if (Array.isArray(arguments[key])) {
@@ -50,7 +50,7 @@ function concat(arr: Array<any>, ...values: any): Array<any> {
 // console.log(_.concat(array, 2, [3], [[4]]));
 
 //difference
-function difference(arr: Array<any>, values: Array<any>): Array<any> {
+function difference(arr: any[], values: any[]): any[] {
  	let res = [];
 	arr.forEach(item => {
 	    	!values.find(elem => elem === item) ? res.push(item) : null;
@@ -63,7 +63,7 @@ function difference(arr: Array<any>, values: Array<any>): Array<any> {
 // console.log(_.difference([2, 1, 4, 4], [2, 3]))
 
 //drop
-function drop(arr: Array<any>, n: number = 1): Array<any> {
+function drop(arr: any[], n: number = 1): any[] {
 	arr.splice(0, n);
 	return arr;
 }
@@ -72,7 +72,7 @@ function drop(arr: Array<any>, n: number = 1): Array<any> {
 // console.log(_.drop([1, 2, 3, 4], 2))
 
 //dropRight
-function dropRight(arr: Array<any>, n: number = 1): Array<any> {
+function dropRight(arr: any[], n: number = 1): any[] {
 	return arr.slice(0, -n);
 }
 
@@ -361,3 +361,37 @@ function sortedUniq(arr: any[]): any[] {
 
 // console.log(sortedUniq([1, 1, 2]))
 // console.log(_.sortedUniq([1, 1, 2]))
+
+//sortedUniqBy
+function sortedUniqBy(arr: any[], func: (item: any) => any): any[] {
+	const res = [];
+	const check = [];
+	arr.forEach(item => {
+		if (!check.includes(func(item))) {
+			res.push(item);
+			check.push(func(item));
+		}
+	});
+	return res;
+}
+
+// console.log(sortedUniqBy([1.1, 1.2, 2.3, 2.4], Math.floor))
+// console.log(_.sortedUniqBy([1.1, 1.2, 2.3, 2.4], Math.floor))
+
+//tail
+const tail = (arr: any[]): any[] => arr.slice(1, arr.length);
+
+// console.log(tail([1, 2, 3]))
+// console.log(_.tail([1, 2, 3]))
+
+//take
+const take = (arr: any[], n: number = 1): any[] => arr.slice(0, n);
+
+// console.log(take([1, 2, 3], 2))
+// console.log(_.take([1, 2, 3], 2))
+
+//takeRight
+const takeRight = (arr: any[], n: number = 1): any[] => arr.slice(-n);
+
+// console.log(takeRight([1, 2, 3], 2))
+// console.log(_.takeRight([1, 2, 3], 2))

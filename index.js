@@ -334,3 +334,35 @@ function sortedUniq(arr) {
 }
 // console.log(sortedUniq([1, 1, 2]))
 // console.log(_.sortedUniq([1, 1, 2]))
+//sortedUniqBy
+function sortedUniqBy(arr, func) {
+    var res = [];
+    var check = [];
+    arr.forEach(function (item) {
+        if (!check.includes(func(item))) {
+            res.push(item);
+            check.push(func(item));
+        }
+    });
+    return res;
+}
+// console.log(sortedUniqBy([1.1, 1.2, 2.3, 2.4], Math.floor))
+// console.log(_.sortedUniqBy([1.1, 1.2, 2.3, 2.4], Math.floor))
+//tail
+var tail = function (arr) { return arr.slice(1, arr.length); };
+// console.log(tail([1, 2, 3]))
+// console.log(_.tail([1, 2, 3]))
+//take
+var take = function (arr, n) {
+    if (n === void 0) { n = 1; }
+    return arr.slice(0, n);
+};
+// console.log(take([1, 2, 3], 2))
+// console.log(_.take([1, 2, 3], 2))
+//takeRight
+var takeRight = function (arr, n) {
+    if (n === void 0) { n = 1; }
+    return arr.slice(-n);
+};
+// console.log(takeRight([1, 2, 3], 2))
+// console.log(_.takeRight([1, 2, 3], 2))
