@@ -395,3 +395,21 @@ const takeRight = (arr: any[], n: number = 1): any[] => arr.slice(-n);
 
 // console.log(takeRight([1, 2, 3], 2))
 // console.log(_.takeRight([1, 2, 3], 2))
+
+//union
+function union(...arr: any[]): any[] {
+	const res = [];
+	const all = [];
+	arr.forEach(item => {
+		all.push(...item)
+	});
+	all.forEach(item => {
+		if (!res.includes(item)) {
+			res.push(item);
+		}
+	});
+	return res;
+}
+
+// console.log(union([2], [1, 2]))
+// console.log(_.union([2], [1, 2]))

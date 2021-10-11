@@ -366,3 +366,23 @@ var takeRight = function (arr, n) {
 };
 // console.log(takeRight([1, 2, 3], 2))
 // console.log(_.takeRight([1, 2, 3], 2))
+//union
+function union() {
+    var arr = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        arr[_i] = arguments[_i];
+    }
+    var res = [];
+    var all = [];
+    arr.forEach(function (item) {
+        all.push.apply(all, item);
+    });
+    all.forEach(function (item) {
+        if (!res.includes(item)) {
+            res.push(item);
+        }
+    });
+    return res;
+}
+// console.log(union([2], [1, 2]))
+// console.log(_.union([2], [1, 2]))
