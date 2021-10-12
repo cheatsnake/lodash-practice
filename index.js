@@ -386,3 +386,56 @@ function union() {
 }
 // console.log(union([2], [1, 2]))
 // console.log(_.union([2], [1, 2]))
+//uniq
+function uniq(arr) {
+    var res = [];
+    arr.forEach(function (item) {
+        if (!res.includes(item)) {
+            res.push(item);
+        }
+    });
+    return res;
+}
+// console.log(uniq([2, 1, 2]))
+// console.log(_.uniq([2, 1, 2]))
+//uniqBy
+function uniqBy(arr, func) {
+    var res = [];
+    var check = [];
+    arr.forEach(function (item) {
+        if (!check.includes(func(item))) {
+            res.push(item);
+            check.push(func(item));
+        }
+    });
+    return res;
+}
+// console.log(uniqBy([2.1, 1.2, 2.3], Math.floor))
+// console.log(_.uniqBy([2.1, 1.2, 2.3], Math.floor))
+//zip
+function zip() {
+    var arr = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        arr[_i] = arguments[_i];
+    }
+    var res = [];
+    var max = 0;
+    arr.forEach(function (item) {
+        if (item.length > max) {
+            max = item.length;
+        }
+    });
+    var _loop_1 = function (i) {
+        var a = [];
+        arr.forEach(function (item) {
+            a.push(item[i]);
+        });
+        res.push(a);
+    };
+    for (var i = 0; i < max; i++) {
+        _loop_1(i);
+    }
+    return res;
+}
+// console.log(zip(['a', 'b'], [1, 2, 3], [true, false, 3]))
+// console.log(_.zip(['a', 'b'], [1, 2, 3], [true, false, 3]))

@@ -413,3 +413,56 @@ function union(...arr: any[]): any[] {
 
 // console.log(union([2], [1, 2]))
 // console.log(_.union([2], [1, 2]))
+
+//uniq
+function uniq (arr: any[]): any[] {
+	const res = [];
+	arr.forEach(item => {
+		if (!res.includes(item)) {
+			res.push(item);
+		}
+	});
+	return res;
+}
+
+// console.log(uniq([2, 1, 2]))
+// console.log(_.uniq([2, 1, 2]))
+
+//uniqBy
+function uniqBy (arr: any[], func: Function): any[]  {
+	const res = [];
+	const check = [];
+	arr.forEach(item => {
+		if (!check.includes(func(item))) {
+			res.push(item);
+			check.push(func(item));
+		}
+	});
+	return res;
+}
+
+// console.log(uniqBy([2.1, 1.2, 2.3], Math.floor))
+// console.log(_.uniqBy([2.1, 1.2, 2.3], Math.floor))
+
+//zip
+function zip (...arr: any[]): any[] {
+	const res = [];
+	let max = 0;
+	arr.forEach(item => {
+		if (item.length > max) {
+			max = item.length;
+		}
+	});
+	for (let i = 0; i < max; i++) {
+		const a = [];
+		arr.forEach(item => {
+			a.push(item[i]);
+		})
+		res.push(a);
+	}
+	return res;
+}
+
+
+// console.log(zip(['a', 'b'], [1, 2, 3], [true, false, 3]))
+// console.log(_.zip(['a', 'b'], [1, 2, 3], [true, false, 3]))
