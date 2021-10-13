@@ -439,3 +439,47 @@ function zip() {
 }
 // console.log(zip(['a', 'b'], [1, 2, 3], [true, false, 3]))
 // console.log(_.zip(['a', 'b'], [1, 2, 3], [true, false, 3]))
+//unzip
+function unzip() {
+    var arr = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        arr[_i] = arguments[_i];
+    }
+    var res = [];
+    var max = 0;
+    arr[0].forEach(function (item) {
+        if (item.length > max) {
+            max = item.length;
+        }
+    });
+    var _loop_2 = function (i) {
+        var a = [];
+        arr[0].forEach(function (item) {
+            a.push(item[i]);
+        });
+        res.push(a);
+    };
+    for (var i = 0; i < max; i++) {
+        _loop_2(i);
+    }
+    return res;
+}
+// const zipped = zip(['a', 'b'], [1, 2], [true, false])
+// console.log(unzip(zipped))
+// console.log(_.unzip(zipped))
+//without
+function without(arr) {
+    var values = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        values[_i - 1] = arguments[_i];
+    }
+    var res = [];
+    arr.forEach(function (item) {
+        if (!values.includes(item)) {
+            res.push(item);
+        }
+    });
+    return res;
+}
+// console.log(without([2, 1, 2, 3], 1, 2))
+// console.log(_.without([2, 1, 2, 3], 1, 2))

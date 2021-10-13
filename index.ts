@@ -463,6 +463,42 @@ function zip (...arr: any[]): any[] {
 	return res;
 }
 
-
 // console.log(zip(['a', 'b'], [1, 2, 3], [true, false, 3]))
 // console.log(_.zip(['a', 'b'], [1, 2, 3], [true, false, 3]))
+
+//unzip
+function unzip (...arr: any[]): any[] {
+	const res = [];
+	let max = 0;
+	arr[0].forEach(item => {
+		if (item.length > max) {
+			max = item.length;
+		}
+	});
+	for (let i = 0; i < max; i++) {
+		const a = [];
+		arr[0].forEach(item => {
+			a.push(item[i]);
+		})
+		res.push(a);
+	}
+	return res;
+}
+
+// const zipped = zip(['a', 'b'], [1, 2], [true, false])
+// console.log(unzip(zipped))
+// console.log(_.unzip(zipped))
+
+//without
+function without(arr: any[], ...values: any): any[] {
+	const res = [];
+	arr.forEach(item => {
+		if (!values.includes(item)) {
+			res.push(item)
+		}
+	});
+	return res;
+}
+
+// console.log(without([2, 1, 2, 3], 1, 2))
+// console.log(_.without([2, 1, 2, 3], 1, 2))
