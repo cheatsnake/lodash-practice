@@ -502,3 +502,34 @@ function without(arr: any[], ...values: any): any[] {
 
 // console.log(without([2, 1, 2, 3], 1, 2))
 // console.log(_.without([2, 1, 2, 3], 1, 2))
+
+//xor
+function xor(...arr: any[]): any[] {
+	const all = [];
+	const res = [];
+	const check = [];
+	const repeat = [];
+
+	arr.forEach(el => {
+		all.push(...el);
+	});
+
+	all.forEach((el, i) => {
+		if (!check.includes(el)) {
+			check.push(el);
+		} else {
+			repeat.push(el);
+		}
+	});
+
+	all.forEach(el => {
+		if(!repeat.includes(el)) {
+			res.push(el);
+		}
+	});
+
+	return res;
+}
+
+// console.log(xor([2, 1], [2, 3]))
+// console.log(_.xor([2, 1], [2, 3]))
