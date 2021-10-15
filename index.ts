@@ -1,5 +1,7 @@
 const _ = require('lodash'); //need for tests
 
+///////////////ARRAY
+
 //chunk
 function chunk(arr: any[], size: number): any[] {
 	if (size >= arr.length) {
@@ -533,3 +535,16 @@ function xor(...arr: any[]): any[] {
 
 // console.log(xor([2, 1], [2, 3]))
 // console.log(_.xor([2, 1], [2, 3]))
+
+//zipObject
+function zipObject (props: any[], values: any[]): Object {
+	const entries = [];
+	props.forEach((el, i) => {
+		entries.push([props[i], values[i]]);
+	});
+
+	return Object.fromEntries(entries);;
+}
+
+// console.log(zipObject(['a', 'b'], [1, 2]));
+// console.log(_.zipObject(['a', 'b'], [1, 2]));

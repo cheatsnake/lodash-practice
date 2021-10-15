@@ -8,6 +8,7 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     return to.concat(ar || Array.prototype.slice.call(from));
 };
 var _ = require('lodash'); //need for tests
+///////////////ARRAY
 //chunk
 function chunk(arr, size) {
     if (size >= arr.length) {
@@ -513,3 +514,14 @@ function xor() {
 }
 // console.log(xor([2, 1], [2, 3]))
 // console.log(_.xor([2, 1], [2, 3]))
+//zipObject
+function zipObject(props, values) {
+    var entries = [];
+    props.forEach(function (el, i) {
+        entries.push([props[i], values[i]]);
+    });
+    return Object.fromEntries(entries);
+    ;
+}
+// console.log(zipObject(['a', 'b'], [1, 2]));
+// console.log(_.zipObject(['a', 'b'], [1, 2]));
