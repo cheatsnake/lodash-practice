@@ -548,3 +548,36 @@ function zipObject (props: any[], values: any[]): Object {
 
 // console.log(zipObject(['a', 'b'], [1, 2]));
 // console.log(_.zipObject(['a', 'b'], [1, 2]));
+
+
+///////////////////////////STRINGS
+
+//capitalize
+function capitalize(str: string):string {
+	const first = str.charAt(0).toUpperCase();
+	const slised = str.slice(1).toLowerCase();
+
+	return first + slised
+}
+
+// console.log(capitalize('FRED'))
+// console.log(_.capitalize('FRED'))
+
+//endsWith
+function endsWith(str: string, target: string, pos: number = str.length): boolean {
+	return str[pos - 1] === target ? true : false;
+}
+
+// console.log(endsWith('abc', 'c'))
+// console.log(_.endsWith('abc', 'c'))
+
+//lowerFirst
+function lowerFirst(str: string): string {
+	const first = str.charAt(0).toLowerCase();
+	const slised = str.slice(1).toUpperCase();
+
+	return first + slised;
+}
+
+// console.log(lowerFirst('FRED'))
+// console.log(_.lowerFirst('FRED'))

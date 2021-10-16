@@ -525,3 +525,27 @@ function zipObject(props, values) {
 }
 // console.log(zipObject(['a', 'b'], [1, 2]));
 // console.log(_.zipObject(['a', 'b'], [1, 2]));
+///////////////////////////STRINGS
+//capitalize
+function capitalize(str) {
+    var first = str.charAt(0).toUpperCase();
+    var slised = str.slice(1).toLowerCase();
+    return first + slised;
+}
+// console.log(capitalize('FRED'))
+// console.log(_.capitalize('FRED'))
+//endsWith
+function endsWith(str, target, pos) {
+    if (pos === void 0) { pos = str.length; }
+    return str[pos - 1] === target ? true : false;
+}
+// console.log(endsWith('abc', 'c'))
+// console.log(_.endsWith('abc', 'c'))
+//lowerFirst
+function lowerFirst(str) {
+    var first = str.charAt(0).toLowerCase();
+    var slised = str.slice(1).toUpperCase();
+    return first + slised;
+}
+// console.log(lowerFirst('FRED'))
+// console.log(_.lowerFirst('FRED'))
