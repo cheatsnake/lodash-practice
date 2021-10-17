@@ -549,3 +549,14 @@ function lowerFirst(str) {
 }
 // console.log(lowerFirst('FRED'))
 // console.log(_.lowerFirst('FRED'))
+//repeat
+function repeat(str, n) {
+    if (n === void 0) { n = 1; }
+    var res = '';
+    for (var i = 0; i < n; i++) {
+        res += str;
+    }
+    return res;
+}
+// console.log(repeat('abc', 2))
+// console.log(_.repeat('abc', 2))
