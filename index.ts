@@ -593,3 +593,24 @@ function repeat (str: string, n: number = 1): string {
 
 // console.log(repeat('abc', 2))
 // console.log(_.repeat('abc', 2))
+
+//replace
+function replace(
+	str: string = '', 
+	pat: string, 
+	repl: string | Function
+	): string {
+
+	const index = str.indexOf(pat);
+	const len = pat.length;
+
+	let newStr = str.slice(0, index);
+	newStr += repl;
+	newStr += str.slice(index + len, str.length);
+
+	return newStr;
+}
+
+
+// console.log(replace('Hi Fred', 'Fred', 'Barney'))
+// console.log(_.replace('Hi Fred', 'Fred', 'Barney'))

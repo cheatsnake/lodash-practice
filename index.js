@@ -560,3 +560,15 @@ function repeat(str, n) {
 }
 // console.log(repeat('abc', 2))
 // console.log(_.repeat('abc', 2))
+//replace
+function replace(str, pat, repl) {
+    if (str === void 0) { str = ''; }
+    var index = str.indexOf(pat);
+    var len = pat.length;
+    var newStr = str.slice(0, index);
+    newStr += repl;
+    newStr += str.slice(index + len, str.length);
+    return newStr;
+}
+// console.log(replace('Hi Fred', 'Fred', 'Barney'))
+// console.log(_.replace('Hi Fred', 'Fred', 'Barney'))
