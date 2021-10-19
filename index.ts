@@ -611,6 +611,23 @@ function replace(
 	return newStr;
 }
 
-
 // console.log(replace('Hi Fred', 'Fred', 'Barney'))
 // console.log(_.replace('Hi Fred', 'Fred', 'Barney'))
+
+//split
+function split (str: string, separator: string, limit: number = str.length): any[] {
+	const res = [];
+	let elem = '';
+	for (let i = 0; i <= str.length && res.length <= limit; i++) {
+		if (str[i] === separator || i === str.length) {
+			res.push(elem);
+			elem = '';
+		} else {
+			elem += str[i];
+		}
+	}
+	return res;
+}
+
+// console.log(_.split('-helo-fjeij---fef', '-', 3));
+// console.log(split('-helo-fjeij---fef', '-', 3));
