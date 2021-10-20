@@ -631,3 +631,39 @@ function split (str: string, separator: string, limit: number = str.length): any
 
 // console.log(_.split('-helo-fjeij---fef', '-', 3));
 // console.log(split('-helo-fjeij---fef', '-', 3));
+
+//startsWith
+function startsWith(str: string, target: string, pos: number = 0): boolean {
+	return str[pos] === target ? true : false;
+}
+
+// console.log(startsWith('abc', 'b'))
+// console.log(startsWith('abc', 'b', 1))
+// console.log(_.startsWith('abc', 'b'))
+// console.log(_.startsWith('abc', 'b', 1))
+
+//toLower
+const toLower = (str:string): string => str.toLowerCase();
+
+// console.log(toLower('--Foo-Bar--'))
+// console.log(_.toLower('--Foo-Bar--'))
+
+//toUpper
+const toUpper = (str: string): string => str.toUpperCase();
+
+// console.log(toUpper('__foo_bar__'))
+// console.log(_.toUpper('__foo_bar__'))
+
+//trim
+function trim(str: string, chars: string = ' '): string {
+	let newStr = '';
+	for (let i = 0; i < str.length; i++) {
+		if (!chars.includes(str[i])) {
+			newStr += str[i];
+		}
+	}
+	return newStr;
+}
+
+// console.log(trim('-_-abc-_-', '_-'))
+// console.log(_.trim('-_-abc-_-', '_-'))

@@ -590,3 +590,33 @@ function split(str, separator, limit) {
 }
 // console.log(_.split('-helo-fjeij---fef', '-', 3));
 // console.log(split('-helo-fjeij---fef', '-', 3));
+//startsWith
+function startsWith(str, target, pos) {
+    if (pos === void 0) { pos = 0; }
+    return str[pos] === target ? true : false;
+}
+// console.log(startsWith('abc', 'b'))
+// console.log(startsWith('abc', 'b', 1))
+// console.log(_.startsWith('abc', 'b'))
+// console.log(_.startsWith('abc', 'b', 1))
+//toLower
+var toLower = function (str) { return str.toLowerCase(); };
+// console.log(toLower('--Foo-Bar--'))
+// console.log(_.toLower('--Foo-Bar--'))
+//toUpper
+var toUpper = function (str) { return str.toUpperCase(); };
+// console.log(toUpper('__foo_bar__'))
+// console.log(_.toUpper('__foo_bar__'))
+//trim
+function trim(str, chars) {
+    if (chars === void 0) { chars = ' '; }
+    var newStr = '';
+    for (var i = 0; i < str.length; i++) {
+        if (!chars.includes(str[i])) {
+            newStr += str[i];
+        }
+    }
+    return newStr;
+}
+// console.log(trim('-_-abc-_-', '_-'))
+// console.log(_.trim('-_-abc-_-', '_-'))
