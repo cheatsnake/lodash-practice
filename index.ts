@@ -667,3 +667,35 @@ function trim(str: string, chars: string = ' '): string {
 
 // console.log(trim('-_-abc-_-', '_-'))
 // console.log(_.trim('-_-abc-_-', '_-'))
+
+//trimEnd
+function trimEnd(str: string, chars: string = ' '): string {
+	let newStr = str;
+	for (let i = str.length - 1; i > 0; i--) {
+		if (chars.includes(str[i])) {
+			newStr = str.slice(0, i);
+		} else {
+      		return newStr;
+    	}
+	}
+	return newStr;
+}
+
+// console.log(trimEnd('str---', '-'))
+// console.log(_.trimEnd('str---', '-'))
+
+//trimStart
+function trimStart(str: string, chars: string = ' '): string {
+	let newStr = str;
+	for (let i = 0; i < str.length; i++) {
+		if (chars.includes(str[i])) {
+			newStr = str.slice(i + 1, str.length);
+		} else {
+      		return newStr;
+    	}
+	}
+	return newStr;
+}
+
+// console.log(trimStart('-_-_-abc-_-', '_-'))
+// console.log(_.trimStart('-_-_-abc-_-', '_-'))
