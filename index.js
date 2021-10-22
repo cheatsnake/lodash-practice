@@ -652,3 +652,20 @@ function trimStart(str, chars) {
 }
 // console.log(trimStart('-_-_-abc-_-', '_-'))
 // console.log(_.trimStart('-_-_-abc-_-', '_-'))
+//truncate
+function truncate(str, _a) {
+    if (str === void 0) { str = ''; }
+    var _b = _a.length, length = _b === void 0 ? 30 : _b, _c = _a.omission, omission = _c === void 0 ? '...' : _c, _d = _a.separator, separator = _d === void 0 ? '' : _d;
+    var newStr = str;
+    if (str.length > length) {
+        newStr = str.slice(0, length - omission.length);
+        if (separator.length)
+            newStr = newStr.slice(0, newStr.lastIndexOf(separator));
+        newStr += omission;
+    }
+    return newStr;
+}
+// console.log(_.truncate('hi-diddly-ho there, neighborino', {'length': 18, 'separator': ' '}))
+// console.log(_.truncate('hi-diddly-ho there, neighborino', {'length': 18}))
+// console.log(truncate('hi-diddly-ho there, neighborino', {'length': 18, 'separator': ' '}))
+// console.log(truncate('hi-diddly-ho there, neighborino', {'length': 18}))

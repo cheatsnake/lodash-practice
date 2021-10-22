@@ -685,7 +685,7 @@ function trimEnd(str: string, chars: string = ' '): string {
 // console.log(_.trimEnd('str---', '-'))
 
 //trimStart
-function trimStart(str: string, chars: string = ' '): string {
+function trimStart(str: string, chars = ' '): string {
 	let newStr = str;
 	for (let i = 0; i < str.length; i++) {
 		if (chars.includes(str[i])) {
@@ -699,3 +699,23 @@ function trimStart(str: string, chars: string = ' '): string {
 
 // console.log(trimStart('-_-_-abc-_-', '_-'))
 // console.log(_.trimStart('-_-_-abc-_-', '_-'))
+
+//truncate
+function truncate(str = '', {
+	length = 30, 
+	omission = '...', 
+	separator = ''
+}): string {
+	let newStr = str;
+	if (str.length > length) {
+		newStr = str.slice(0, length - omission.length);
+		if (separator.length) newStr = newStr.slice(0, newStr.lastIndexOf(separator))
+		newStr += omission;
+	}
+	return newStr;
+}
+
+// console.log(_.truncate('hi-diddly-ho there, neighborino', {'length': 18, 'separator': ' '}))
+// console.log(_.truncate('hi-diddly-ho there, neighborino', {'length': 18}))
+// console.log(truncate('hi-diddly-ho there, neighborino', {'length': 18, 'separator': ' '}))
+// console.log(truncate('hi-diddly-ho there, neighborino', {'length': 18}))
