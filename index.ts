@@ -65,7 +65,7 @@ function difference(arr: any[], values: any[]): any[] {
 // console.log(_.difference([2, 1, 4, 4], [2, 3]))
 
 //drop
-function drop(arr: any[], n: number = 1): any[] {
+function drop(arr: any[], n = 1): any[] {
 	arr.splice(0, n);
 	return arr;
 }
@@ -74,7 +74,7 @@ function drop(arr: any[], n: number = 1): any[] {
 // console.log(_.drop([1, 2, 3, 4], 2))
 
 //dropRight
-function dropRight(arr: any[], n: number = 1): any[] {
+function dropRight(arr: any[], n = 1): any[] {
 	return arr.slice(0, -n);
 }
 
@@ -85,8 +85,8 @@ function dropRight(arr: any[], n: number = 1): any[] {
 function fill(
 	arr: any[],
 	value: any, 
-	start: number = 0, 
-	end: number = arr.length)
+	start = 0, 
+	end = arr.length)
 : any[] {
 	return arr.map((elem, i) => i >= start && i < end ? value : elem);
 }
@@ -130,7 +130,7 @@ function flattenDeep(arr: any[]): any[] {
 // console.log(_.flattenDeep([1, [2, [3, [4]], 5]]))
 
 //indexOf
-function indexOf(arr: any[], value: any, fromIndex: number = 0): number {
+function indexOf(arr: any[], value: any, fromIndex = 0): number {
 	let res = -1;
 	for (let i = fromIndex; i < arr.length; i++) {
 		if (arr[i] === value) {
@@ -170,7 +170,7 @@ function intersection(...arr: any[]): any[] {
 // console.log(_.intersection([2, 1], [2, 3]))
 
 //join
-function join(arr: any[], separator: string = ','): string {
+function join(arr: any[], separator = ','): string {
 	let res = '';
 	arr.forEach(item => {
 		res += (item + separator);
@@ -285,7 +285,7 @@ const reverse = (arr: any[]): any[] => arr.reverse();
 // console.log(_.reverse(arr2), arr2)
 
 //slice
-function slice(arr: any[], start: number = 0, end: number = arr.length): any[] {
+function slice(arr: any[], start: number = 0, end = arr.length): any[] {
 	return arr.slice(start, end);
 }
 
@@ -564,7 +564,7 @@ function capitalize(str: string):string {
 // console.log(_.capitalize('FRED'))
 
 //endsWith
-function endsWith(str: string, target: string, pos: number = str.length): boolean {
+function endsWith(str: string, target: string, pos = str.length): boolean {
 	return str[pos - 1] === target ? true : false;
 }
 
@@ -583,7 +583,7 @@ function lowerFirst(str: string): string {
 // console.log(_.lowerFirst('FRED'))
 
 //repeat
-function repeat (str: string, n: number = 1): string {
+function repeat (str: string, n = 1): string {
 	let res = '';
 	for (let i = 0; i < n; i++) {
 		res += str;
@@ -615,7 +615,7 @@ function replace(
 // console.log(_.replace('Hi Fred', 'Fred', 'Barney'))
 
 //split
-function split (str: string, separator: string, limit: number = str.length): any[] {
+function split (str: string, separator: string, limit = str.length): any[] {
 	const res = [];
 	let elem = '';
 	for (let i = 0; i <= str.length && res.length <= limit; i++) {
@@ -633,7 +633,7 @@ function split (str: string, separator: string, limit: number = str.length): any
 // console.log(split('-helo-fjeij---fef', '-', 3));
 
 //startsWith
-function startsWith(str: string, target: string, pos: number = 0): boolean {
+function startsWith(str: string, target: string, pos = 0): boolean {
 	return str[pos] === target ? true : false;
 }
 
@@ -655,7 +655,7 @@ const toUpper = (str: string): string => str.toUpperCase();
 // console.log(_.toUpper('__foo_bar__'))
 
 //trim
-function trim(str: string, chars: string = ' '): string {
+function trim(str: string, chars = ' '): string {
 	let newStr = '';
 	for (let i = 0; i < str.length; i++) {
 		if (!chars.includes(str[i])) {
@@ -669,7 +669,7 @@ function trim(str: string, chars: string = ' '): string {
 // console.log(_.trim('-_-abc-_-', '_-'))
 
 //trimEnd
-function trimEnd(str: string, chars: string = ' '): string {
+function trimEnd(str: string, chars = ' '): string {
 	let newStr = str;
 	for (let i = str.length - 1; i > 0; i--) {
 		if (chars.includes(str[i])) {
