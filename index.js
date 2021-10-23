@@ -669,3 +669,14 @@ function truncate(str, _a) {
 // console.log(_.truncate('hi-diddly-ho there, neighborino', {'length': 18}))
 // console.log(truncate('hi-diddly-ho there, neighborino', {'length': 18, 'separator': ' '}))
 // console.log(truncate('hi-diddly-ho there, neighborino', {'length': 18}))
+//upperFirst
+function upperFirst(str) {
+    if (str === void 0) { str = ''; }
+    var first = str.charAt(0).toUpperCase();
+    var slised = str.slice(1);
+    return first + slised;
+}
+// console.log(upperFirst('fred'))
+// console.log(upperFirst('FRED'))
+// console.log(_.upperFirst('fred'))
+// console.log(_.upperFirst('FRED'))

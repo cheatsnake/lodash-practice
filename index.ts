@@ -719,3 +719,16 @@ function truncate(str = '', {
 // console.log(_.truncate('hi-diddly-ho there, neighborino', {'length': 18}))
 // console.log(truncate('hi-diddly-ho there, neighborino', {'length': 18, 'separator': ' '}))
 // console.log(truncate('hi-diddly-ho there, neighborino', {'length': 18}))
+
+//upperFirst
+function upperFirst (str = ''): string {
+	const first = str.charAt(0).toUpperCase();
+	const slised = str.slice(1);
+
+	return first + slised;
+}
+
+// console.log(upperFirst('fred'))
+// console.log(upperFirst('FRED'))
+// console.log(_.upperFirst('fred'))
+// console.log(_.upperFirst('FRED'))
