@@ -1,3 +1,4 @@
+"use strict";
 var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
         if (ar || !(i in from)) {
@@ -7,7 +8,8 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     }
     return to.concat(ar || Array.prototype.slice.call(from));
 };
-var _ = require('lodash'); //need for tests
+exports.__esModule = true;
+var lodash_1 = require("lodash"); //need for tests
 ///////////////ARRAY
 //chunk
 function chunk(arr, size) {
@@ -680,3 +682,10 @@ function upperFirst(str) {
 // console.log(upperFirst('FRED'))
 // console.log(_.upperFirst('fred'))
 // console.log(_.upperFirst('FRED'))
+//////////////////////////////MATH
+//add
+function add(augend, addend) {
+    return augend + addend;
+}
+console.log(add(6, 4));
+console.log(lodash_1._.add(6, 4));

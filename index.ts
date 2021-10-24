@@ -1,4 +1,4 @@
-const _ = require('lodash'); //need for tests
+import {_} from 'lodash'; //need for tests
 
 ///////////////ARRAY
 
@@ -721,7 +721,7 @@ function truncate(str = '', {
 // console.log(truncate('hi-diddly-ho there, neighborino', {'length': 18}))
 
 //upperFirst
-function upperFirst (str = ''): string {
+function upperFirst(str = ''): string {
 	const first = str.charAt(0).toUpperCase();
 	const slised = str.slice(1);
 
@@ -732,3 +732,14 @@ function upperFirst (str = ''): string {
 // console.log(upperFirst('FRED'))
 // console.log(_.upperFirst('fred'))
 // console.log(_.upperFirst('FRED'))
+
+
+//////////////////////////////MATH
+
+//add
+function add(augend: number, addend: number): number {
+	return augend + addend;
+}
+
+// console.log(add(6, 4))
+// console.log(_.add(6, 4))
