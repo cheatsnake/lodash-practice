@@ -687,5 +687,11 @@ function upperFirst(str) {
 function add(augend, addend) {
     return augend + addend;
 }
-console.log(add(6, 4));
-console.log(lodash_1._.add(6, 4));
+// console.log(add(6, 4))
+// console.log(_.add(6, 4))
+//divide
+function divide(dividend, divisor) {
+    return dividend / divisor;
+}
+console.log(divide(6, 4));
+console.log(lodash_1._.divide(6, 4));

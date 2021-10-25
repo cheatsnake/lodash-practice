@@ -743,3 +743,11 @@ function add(augend: number, addend: number): number {
 
 // console.log(add(6, 4))
 // console.log(_.add(6, 4))
+
+//divide
+function divide(dividend: number, divisor: number): number {
+	return dividend / divisor;
+}
+
+// console.log(divide(6, 4))
+// console.log(_.divide(6, 4))
