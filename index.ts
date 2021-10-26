@@ -751,3 +751,15 @@ function divide(dividend: number, divisor: number): number {
 
 // console.log(divide(6, 4))
 // console.log(_.divide(6, 4))
+
+//max
+function max(arr: number[]): number {
+	let max = arr[0];
+	for(let i = 1; i < arr.length; i++) {
+		if(arr[i] > max) max = arr[i];
+	}
+	return max;
+}
+
+// console.log(max([4, 2, 8, 6]))
+// console.log(_.max([4, 2, 8, 6]))

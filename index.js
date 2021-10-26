@@ -9,7 +9,6 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     return to.concat(ar || Array.prototype.slice.call(from));
 };
 exports.__esModule = true;
-var lodash_1 = require("lodash"); //need for tests
 ///////////////ARRAY
 //chunk
 function chunk(arr, size) {
@@ -693,5 +692,16 @@ function add(augend, addend) {
 function divide(dividend, divisor) {
     return dividend / divisor;
 }
-console.log(divide(6, 4));
-console.log(lodash_1._.divide(6, 4));
+// console.log(divide(6, 4))
+// console.log(_.divide(6, 4))
+//max
+function max(arr) {
+    var max = arr[0];
+    for (var i = 1; i < arr.length; i++) {
+        if (arr[i] > max)
+            max = arr[i];
+    }
+    return max;
+}
+// console.log(max([4, 2, 8, 6]))
+// console.log(_.max([4, 2, 8, 6]))
