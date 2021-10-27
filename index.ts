@@ -763,3 +763,15 @@ function max(arr: number[]): number {
 
 // console.log(max([4, 2, 8, 6]))
 // console.log(_.max([4, 2, 8, 6]))
+
+//mean
+function mean (arr: number[]): number {
+	let total = 0;
+	for(let i = 0; i < arr.length; i++) {
+		total += arr[i];
+	}
+	return total / arr.length;
+}
+
+// console.log(mean([4, 2, 8, 6]))
+// console.log(_.mean([4, 2, 8, 6]))
