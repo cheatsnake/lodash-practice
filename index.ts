@@ -775,3 +775,24 @@ function mean (arr: number[]): number {
 
 // console.log(mean([4, 2, 8, 6]))
 // console.log(_.mean([4, 2, 8, 6]))
+
+//min
+function min(arr: number[]): number {
+  let m = arr[0]
+  for(let i = 1; i < arr.length; i++) {
+    if (m > arr[i]) m = arr[i]
+  }
+  return m
+}
+
+// console.log(min([4, 2, 8, 6]))
+// console.log(_.min([4, 2, 8, 6]))
+
+//multiply
+function multiply(multiplier: number, multiplicand: number): number {
+  return multiplier * multiplicand
+}
+
+// console.log(multiply(7, 5))
+// console.log(_.multiply(7, 5))
+
