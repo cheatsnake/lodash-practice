@@ -1,5 +1,10 @@
 {
-	"compilerOptions": {
-		"lib": ["dom", "es5"]
-	}
+  "compilerOptions": {
+    "lib": ["dom", "es2020"],
+    "esModuleInterop": true,
+    "outDir": "dist"
+  },
+  "include": [
+    "src/**/*"
+  ]
 }
