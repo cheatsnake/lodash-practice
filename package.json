@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsc index.ts && node index.js"
+    "start": "npx tsc"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +13,7 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "@types/node": "^16.10.1"
+    "@types/lodash": "^4.14.176",
+    "typescript": "^4.4.4"
   }
 }
