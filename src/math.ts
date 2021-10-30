@@ -59,3 +59,20 @@ function multiply(multiplier: number, multiplicand: number): number {
 
 // console.log(multiply(7, 5))
 // console.log(_.multiply(7, 5))
+
+//subtract
+function subtract(subtract: number, subtrahend: number): number {
+	return subtract - subtrahend;
+}
+
+// console.log(subtract(6, 4))
+// console.log(_.subtract(6, 4))
+
+//sum
+function sum(arr: number[]): number {
+	return arr.reduce((total, current) => total + current);
+}
+
+// console.log(sum([4, 2, 8, 6]))
+// console.log(_.sum([4, 2, 8, 6]))
+
