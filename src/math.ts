@@ -16,6 +16,21 @@ function divide(dividend: number, divisor: number): number {
 // console.log(divide(6, 4))
 // console.log(_.divide(6, 4))
 
+//floor
+function floor(number: number, precision = 0): number {
+	const integer = Math.floor(Number(`${number}e${precision}`)); //5e2 in JS = 5*10^2 = 500
+	if (precision < 0) {
+		return Number(`${integer}e${Math.abs(precision)}`);
+	}
+	return Number(`${integer}e-${precision}`);
+}
+
+// console.log(floor(0.046, 2))
+// console.log(_.floor(0.046, 2))
+// console.log(floor(4060, -2))
+// console.log(_.floor(4060, -2))
+
+
 //max
 function max(arr: number[]): number {
 	let max = arr[0];
