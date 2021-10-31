@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx tsc"
+    "start": "npx tsc",
+    "start:array": "npx tsc && node dist/array.js",
+    "start:math": "npx tsc && node dist/math.js",
+    "start:string": "npx tsc && node dist/string.js"
   },
   "keywords": [],
   "author": "",
