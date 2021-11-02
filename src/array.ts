@@ -51,12 +51,8 @@ function concat(arr: any[], ...values: any): any[] {
 
 //difference
 function difference(arr: any[], values: any[]): any[] {
- 	let res = [];
-	arr.forEach(item => {
-	    	!values.find(elem => elem === item) ? res.push(item) : null;
-	    }
-  	);
-	return res;
+	const uniqValues = new Set(values);
+	return arr.filter(el => !values.includes(el));
 }
 
 // console.log(difference([2, 1, 4, 4], [2, 3]))
