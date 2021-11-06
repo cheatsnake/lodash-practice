@@ -58,6 +58,16 @@ function difference(arr: any[], values: any[]): any[] {
 // console.log(difference([2, 1, 4, 4], [2, 3]))
 // console.log(_.difference([2, 1, 4, 4], [2, 3]))
 
+//differenceBy
+function differenceBy(arr: any[], values: any[], func): any[] {
+	const uniqValues = new Set(values.map(func));
+	return arr.filter(el => !uniqValues.has(func(el)));
+}
+
+// console.log(differenceBy([2.1, 1.2], [2.3, 3.4], Math.floor));
+// console.log(_.differenceBy([2.1, 1.2], [2.3, 3.4], Math.floor));
+
+
 //drop
 function drop(arr: any[], n = 1): any[] {
 	arr.splice(0, n);
