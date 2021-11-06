@@ -51,12 +51,13 @@ function concat(arr: any[], ...values: any): any[] {
 
 //difference
 function difference(arr: any[], values: any[]): any[] {
-	const uniqValues = new Set(values);
 	return arr.filter(el => !values.includes(el));
 }
 
 // console.log(difference([2, 1, 4, 4], [2, 3]))
+// console.log(difference([1, 2, 3, 3], [1, 2, 4]))
 // console.log(_.difference([2, 1, 4, 4], [2, 3]))
+// console.log(_.difference([1, 2, 3, 3], [1, 2, 4]))
 
 //differenceBy
 function differenceBy(arr: any[], values: any[], func): any[] {
@@ -66,7 +67,6 @@ function differenceBy(arr: any[], values: any[], func): any[] {
 
 // console.log(differenceBy([2.1, 1.2], [2.3, 3.4], Math.floor));
 // console.log(_.differenceBy([2.1, 1.2], [2.3, 3.4], Math.floor));
-
 
 //drop
 function drop(arr: any[], n = 1): any[] {
