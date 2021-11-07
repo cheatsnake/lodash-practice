@@ -133,6 +133,16 @@ function flattenDeep(arr: any[]): any[] {
 // console.log(flattenDeep([1, [2, [3, [4]], 5]]))
 // console.log(_.flattenDeep([1, [2, [3, [4]], 5]]))
 
+//fromPairs
+function fromPairs(pairs: any[]): Object {
+	return pairs.reduce((accumulator, [key, value]) => {
+		return (accumulator[key] = value), accumulator;
+	}, {});
+}
+
+// console.log(fromPairs([['a', 1], ['b', 2], ['c', 3]]))
+// console.log(_.fromPairs([['a', 1], ['b', 2], ['c', 3]]))
+
 //indexOf
 function indexOf(arr: any[], value: any, fromIndex = 0): number {
 	let res = -1;
