@@ -18,3 +18,21 @@ const clone = (value: any): any => value;
 // const test2 = _.clone(objects)
 // console.log(test1[0] === objects[0])
 // console.log(test2[0] === objects[0])
+
+//gt
+const gt = (value: number, other: number): boolean =>
+    value > other ? true : false;
+
+// console.log(gt(3, 3))
+// console.log(_.gt(3, 3))
+// console.log(gt(3, 2))
+// console.log(_.gt(3, 2))
+
+//gte
+const gte = (value: number, other: number): boolean =>
+    value >= other ? true : false;
+
+// console.log(gte(3, 4))
+// console.log(_.gte(3, 4))
+// console.log(gte(3, 3))
+// console.log(_.gte(3, 3))
