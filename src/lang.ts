@@ -1,4 +1,4 @@
-import _, { isArray } from 'lodash'; //need for tests
+import _ from 'lodash'; //need for tests
 
 //castArray
 function castArray(value?: any): any[] {
@@ -36,3 +36,14 @@ const gte = (value: number, other: number): boolean =>
 // console.log(_.gte(3, 4))
 // console.log(gte(3, 3))
 // console.log(_.gte(3, 3))
+
+//isArray
+const isArray = (value: any): boolean => Array.isArray(value);
+
+// console.log(isArray([1, 2, 3]));
+// console.log(_.isArray([1, 2, 3]));
+// console.log(isArray('abc'));
+// console.log(_.isArray('abc'));
+// console.log(isArray(null));
+// console.log(_.isArray(null));
+
