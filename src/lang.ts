@@ -40,10 +40,22 @@ const gte = (value: number, other: number): boolean =>
 //isArray
 const isArray = (value: any): boolean => Array.isArray(value);
 
-// console.log(isArray([1, 2, 3]));
-// console.log(_.isArray([1, 2, 3]));
-// console.log(isArray('abc'));
-// console.log(_.isArray('abc'));
-// console.log(isArray(null));
-// console.log(_.isArray(null));
+// console.log(isArray([1, 2, 3]))
+// console.log(_.isArray([1, 2, 3]))
+// console.log(isArray('abc'))
+// console.log(_.isArray('abc'))
+// console.log(isArray(null))
+// console.log(_.isArray(null))
 
+//isArrayLike
+const isArrayLike = (value: any): boolean => 
+    typeof(value) !== 'function' && value !== null
+    ? true
+    : false;
+
+// console.log(isArrayLike([1, 2, 3]))
+// console.log(_.isArrayLike([1, 2, 3]))
+// console.log(isArrayLike('abc'))
+// console.log(_.isArrayLike('abc'))
+// console.log(isArrayLike(null))
+// console.log(_.isArrayLike(null))
