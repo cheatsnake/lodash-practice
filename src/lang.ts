@@ -59,3 +59,26 @@ const isArrayLike = (value: any): boolean =>
 // console.log(_.isArrayLike('abc'))
 // console.log(isArrayLike(null))
 // console.log(_.isArrayLike(null))
+
+//isBoolean
+const isBoolean = (value: any): boolean =>
+    typeof(value) === 'boolean' ? true : false;
+
+// console.log(isBoolean(false))
+// console.log(_.isBoolean(false))
+// console.log(isBoolean(null))
+// console.log(_.isBoolean(null))
+
+//lt
+const lt = (value: number, other: number): boolean =>
+    value < other ? true : false;
+
+// console.log(lt(2, 3));
+// console.log(_.lt(2, 3));
+
+//lte
+const lte = (value: number, other: number): boolean =>
+    value <= other ? true : false;
+
+// console.log(lte(3, 3));
+// console.log(_.lte(3, 3));
