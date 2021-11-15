@@ -73,12 +73,31 @@ const isBoolean = (value: any): boolean =>
 const lt = (value: number, other: number): boolean =>
     value < other ? true : false;
 
-// console.log(lt(2, 3));
-// console.log(_.lt(2, 3));
+// console.log(lt(2, 3))
+// console.log(_.lt(2, 3))
 
 //lte
 const lte = (value: number, other: number): boolean =>
     value <= other ? true : false;
 
-// console.log(lte(3, 3));
-// console.log(_.lte(3, 3));
+// console.log(lte(3, 3))
+// console.log(_.lte(3, 3))
+
+//toArray
+function toArray(value: any): any[] {
+    if (typeof(value) == 'object') {
+        const arr = [];
+        for (const key in value) {
+            arr.push(value[key]);
+        }
+        return arr;
+    }
+    return Array.from(value);
+}
+  
+//   console.log(toArray({'a': 1, 'b': 2 }))
+//   console.log(_.toArray({'a': 1, 'b': 2 }))
+//   console.log(toArray('abc'))
+//   console.log(_.toArray('abc'))
+  
+  
