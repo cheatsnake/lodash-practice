@@ -100,4 +100,16 @@ function toArray(value: any): any[] {
 //   console.log(toArray('abc'))
 //   console.log(_.toArray('abc'))
   
-  
+//toFinite
+function toFinite(value: any): number {
+    if (value === Infinity) return Number.MAX_VALUE;
+    return Number(value);
+}
+
+// console.log(toFinite(Number.MIN_VALUE))
+// console.log(_.toFinite(Number.MIN_VALUE))
+// console.log(toFinite(Infinity))
+// console.log(_.toFinite(Infinity))
+// console.log(toFinite('3.2'))
+// console.log(_.toFinite('3.2'))
+
