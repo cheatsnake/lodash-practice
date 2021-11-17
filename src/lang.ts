@@ -113,3 +113,12 @@ function toFinite(value: any): number {
 // console.log(toFinite('3.2'))
 // console.log(_.toFinite('3.2'))
 
+//toInteger
+const toInteger = (value: any): number =>
+     Math.round(Math.max(Math.min(value, Number.MAX_VALUE), Number.MIN_VALUE))
+
+
+// console.log(toInteger(Number.MIN_VALUE));
+// console.log(_.toInteger(Number.MIN_VALUE));
+// console.log(toInteger(Infinity));
+// console.log(_.toInteger(Infinity));
